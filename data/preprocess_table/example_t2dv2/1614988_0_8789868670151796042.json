@@ -1,0 +1,65 @@
+{
+  "table_id": "1614988_0_8789868670151796042",
+  "gt_ontology": "Scientist",
+  "gt_uri": "http://dbpedia.org/ontology/Scientist",
+  "pk_col_index": 0,
+  "pk_col_header_raw": "name",
+  "pk_col_header_clean": "Name",
+  "header_informative": true,
+  "source_col": "attribute_file",
+  "source_cells": "entity_file",
+  "cell_samples_raw": [
+    "octavio paz",
+    "wolfgang pauli",
+    "ilya prigogine",
+    "charles pedersen",
+    "john pople",
+    "frederic passy"
+  ],
+  "cell_samples_clean": [
+    "octavio paz",
+    "wolfgang pauli",
+    "ilya prigogine",
+    "charles pedersen",
+    "john pople",
+    "frederic passy"
+  ],
+  "context": "The table is titled Nobelpreis. The primary column header is 'Name'. Example values in this column are octavio paz, wolfgang pauli, ilya prigogine, charles pedersen, john pople, frederic passy.",
+  "context_sources": [
+    "table_title",
+    "pk_col_header",
+    "cell_samples"
+  ],
+  "table_title": "Nobelpreis",
+  "neighbour_headers": [
+    "Alter",
+    "Geb.",
+    "Gest.",
+    "Land",
+    "Medizin",
+    "Physik",
+    "Chemie",
+    "Wirtsch.",
+    "Literatur",
+    "Frieden"
+  ],
+  "neighbour_cells": [
+    [],
+    [],
+    [],
+    [
+      "Belgien",
+      "Frankreich",
+      "Russland",
+      "Österreich",
+      "Vereinigte Staaten",
+      "Mexiko"
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ]
+}

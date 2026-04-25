@@ -1,0 +1,64 @@
+{
+  "table_id": "1146722_1_7558140036342906956",
+  "gt_ontology": "Mountain",
+  "gt_uri": "http://dbpedia.org/ontology/Mountain",
+  "pk_col_index": 0,
+  "pk_col_header_raw": "peak",
+  "pk_col_header_clean": "Peak",
+  "header_informative": true,
+  "source_col": "attribute_file",
+  "source_cells": "entity_file",
+  "cell_samples_raw": [
+    "coniston old man",
+    "nabthe",
+    "caw fell",
+    "bleaberry fell",
+    "nab scar",
+    "rest dodd"
+  ],
+  "cell_samples_clean": [
+    "coniston old man",
+    "nabthe",
+    "caw fell",
+    "bleaberry fell",
+    "nab scar",
+    "rest dodd"
+  ],
+  "context": "The table is titled Wainwrights. The primary column header is 'Peak'. Example values in this column are coniston old man, nabthe, caw fell, bleaberry fell, nab scar, rest dodd.",
+  "context_sources": [
+    "table_title",
+    "pk_col_header",
+    "cell_samples"
+  ],
+  "table_title": "Wainwrights",
+  "neighbour_headers": [
+    "Ranking",
+    "Map",
+    "Guide",
+    "Grid Ref",
+    "Alt"
+  ],
+  "neighbour_cells": [
+    [],
+    [
+      "SW",
+      "NE",
+      "NW",
+      "SE"
+    ],
+    [
+      "FE",
+      "NW"
+    ],
+    [
+      "NY 236 085",
+      "NY 414 148",
+      "NY 207 197",
+      "NY 297 159",
+      "NY 394 150",
+      "NY 461 206"
+    ],
+    [],
+    []
+  ]
+}
