@@ -1,0 +1,319 @@
+{
+  "Hit@1": 0.3034,
+  "Hit@5": 0.4944,
+  "Hit@10": 0.5506,
+  "Hit@20": 0.6404,
+  "MRR": 0.3945,
+  "micro_f1": 0.3721,
+  "macro_f1": 0.2971,
+  "micro_p": 0.4746,
+  "micro_r": 0.306,
+  "AH-Hit@1": 0.3933,
+  "AH-Hit@5": 0.6742,
+  "AH-Hit@10": 0.7303,
+  "AH-Hit@20": 0.7978,
+  "AH-MRR": 0.5157,
+  "AH-micro_f1": 0.4759,
+  "AH-macro_f1": 0.3929,
+  "AH-micro_p": 0.5781,
+  "AH-micro_r": 0.4044,
+  "n_corrections": 8,
+  "n_over_specific": 7,
+  "n_over_general": 1,
+  "per_type_exact": [
+    {
+      "label": "Service",
+      "f1": 1.0,
+      "p": 1.0,
+      "r": 1.0,
+      "support": 1
+    },
+    {
+      "label": "GeographicalCoordinatesPoint",
+      "f1": 0.8235,
+      "p": 1.0,
+      "r": 0.7,
+      "support": 10
+    },
+    {
+      "label": "Unit_of_measure",
+      "f1": 0.7692,
+      "p": 1.0,
+      "r": 0.625,
+      "support": 8
+    },
+    {
+      "label": "District",
+      "f1": 0.75,
+      "p": 1.0,
+      "r": 0.6,
+      "support": 5
+    },
+    {
+      "label": "Building Space",
+      "f1": 0.7143,
+      "p": 1.0,
+      "r": 0.5556,
+      "support": 9
+    },
+    {
+      "label": "Energy unit",
+      "f1": 0.6667,
+      "p": 0.8571,
+      "r": 0.5455,
+      "support": 11
+    },
+    {
+      "label": "Power unit",
+      "f1": 0.6667,
+      "p": 1.0,
+      "r": 0.5,
+      "support": 2
+    },
+    {
+      "label": "Power",
+      "f1": 0.6667,
+      "p": 0.5,
+      "r": 1.0,
+      "support": 1
+    },
+    {
+      "label": "Meter",
+      "f1": 0.6667,
+      "p": 1.0,
+      "r": 0.5,
+      "support": 2
+    },
+    {
+      "label": "TemporalEntity",
+      "f1": 0.6667,
+      "p": 1.0,
+      "r": 0.5,
+      "support": 2
+    },
+    {
+      "label": "Electricity",
+      "f1": 0.6667,
+      "p": 1.0,
+      "r": 0.5,
+      "support": 2
+    },
+    {
+      "label": "EnergyType",
+      "f1": 0.6667,
+      "p": 0.6667,
+      "r": 0.6667,
+      "support": 3
+    },
+    {
+      "label": "Location",
+      "f1": 0.6,
+      "p": 0.9,
+      "r": 0.45,
+      "support": 20
+    },
+    {
+      "label": "Space",
+      "f1": 0.5556,
+      "p": 1.0,
+      "r": 0.3846,
+      "support": 13
+    },
+    {
+      "label": "Commodity",
+      "f1": 0.5,
+      "p": 1.0,
+      "r": 0.3333,
+      "support": 3
+    },
+    {
+      "label": "Interval",
+      "f1": 0.5,
+      "p": 0.5,
+      "r": 0.5,
+      "support": 2
+    },
+    {
+      "label": "Property",
+      "f1": 0.5,
+      "p": 1.0,
+      "r": 0.3333,
+      "support": 3
+    },
+    {
+      "label": "EntityType",
+      "f1": 0.4,
+      "p": 0.6667,
+      "r": 0.2857,
+      "support": 7
+    },
+    {
+      "label": "Measurement",
+      "f1": 0.3636,
+      "p": 1.0,
+      "r": 0.2222,
+      "support": 9
+    },
+    {
+      "label": "Device",
+      "f1": 0.3333,
+      "p": 1.0,
+      "r": 0.2,
+      "support": 5
+    },
+    {
+      "label": "Textual Description",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 1
+    },
+    {
+      "label": "Singular_unit",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 1
+    },
+    {
+      "label": "Physical object",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 2
+    },
+    {
+      "label": "BuildingType",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 4
+    },
+    {
+      "label": "Equipment",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 1
+    },
+    {
+      "label": "Description",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 2
+    },
+    {
+      "label": "Availability Status",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 1
+    },
+    {
+      "label": "Voltage",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 2
+    },
+    {
+      "label": "Gas",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 2
+    },
+    {
+      "label": "Social Unit",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 3
+    },
+    {
+      "label": "EnergyParameter",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 1
+    },
+    {
+      "label": "Instant",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 1
+    },
+    {
+      "label": "Sensor",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 1
+    },
+    {
+      "label": "ObservationProperty",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 2
+    },
+    {
+      "label": "EnvironmentalParameter",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 1
+    },
+    {
+      "label": "Group",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 3
+    },
+    {
+      "label": "Room",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 9
+    },
+    {
+      "label": "Building",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 14
+    },
+    {
+      "label": "PowerSystemResource",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 1
+    },
+    {
+      "label": "Tenant",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 9
+    },
+    {
+      "label": "Pressure",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 1
+    },
+    {
+      "label": "ObservationValue",
+      "f1": 0.0,
+      "p": 0.0,
+      "r": 0.0,
+      "support": 3
+    }
+  ]
+}
