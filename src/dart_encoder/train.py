@@ -8,9 +8,9 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer, get_cosine_schedule_with_warmup
 
-from data_types import TrainSample
-from dataset import CTADataset, CTACollator
-from model import BiEncoder, evaluate_recall
+from .data_types import TrainSample
+from .dataset import CTADataset, CTACollator
+from .model import BiEncoder, evaluate_recall
 
 
 logging.basicConfig(

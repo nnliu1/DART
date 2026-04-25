@@ -6,8 +6,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 from transformers import AutoModel
 
-from data_types import OntologyType, TrainSample
-from input_format import format_query, format_type
+from .data_types import OntologyType, TrainSample
+from .input_format import format_query, format_type
 
 
 class BiEncoder(nn.Module):

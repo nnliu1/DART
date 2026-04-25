@@ -3,15 +3,105 @@ import argparse
 import logging
 import pickle
 from pathlib import Path
-import sys
+from typing import List, Tuple
+import json
 
-sys.path.append(str(Path(__file__).resolve().parents[2]))
- 
-from dart_encoder.input_format import format_query
-from dart_encoder.retrieve import load_dataset, load_ontology, BiEncoderInference
+import torch
+import torch.nn.functional as F
+from transformers import AutoModel, AutoTokenizer
+
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+def format_query(header: str, cells: List[str], max_cells: int = 10) -> str:
+    cells_str = ", ".join(cells[:max_cells])
+    return f"query: Header: {header} | Cells: {cells_str}"
+
+
+def format_type(label: str, description: str, parents: str,
+                max_parents: int = 3) -> str:
+    text = f"passage: {label}"
+    if description:
+        text += f": {description}"
+    if parents:
+        if isinstance(parents, list):
+            parent_str = ", ".join(parents[:max_parents])
+        else:
+            parent_str = parents
+        if parent_str:
+            text += f". Parent types: {parent_str}"
+    return text
+
+
+class BiEncoderInference:
+    def __init__(self, model_path: str, device: str = "cuda"):
+        self.device = torch.device(
+            device if torch.cuda.is_available() else "cpu"
+        )
+        self.tokenizer = AutoTokenizer.from_pretrained(model_path)
+        self.model     = AutoModel.from_pretrained(model_path).to(self.device)
+        self.model.eval()
+        logger.info("Model loaded from %s on %s", model_path, self.device)
+
+    def mean_pool(self, model_output, attention_mask) -> torch.Tensor:
+        token_emb = model_output.last_hidden_state
+        mask      = attention_mask.unsqueeze(-1).float()
+        return (token_emb * mask).sum(1) / mask.sum(1).clamp(min=1e-9)
+
+    @torch.no_grad()
+    def encode(self, texts: List[str], batch_size: int = 128) -> torch.Tensor:
+        all_embs = []
+        for i in range(0, len(texts), batch_size):
+            batch = texts[i : i + batch_size]
+            enc   = self.tokenizer(
+                batch, padding=True, truncation=True,
+                max_length=256, return_tensors="pt",
+            )
+            enc  = {k: v.to(self.device) for k, v in enc.items()}
+            out  = self.model(**enc)
+            emb  = self.mean_pool(out, enc["attention_mask"])
+            emb  = F.normalize(emb, dim=-1)
+            all_embs.append(emb.cpu())
+        return torch.cat(all_embs, dim=0)
+
+
+
+def load_ontology(
+    ontology_path: str,
+    max_parents:   int = 3,
+) -> Tuple[List[str], List[str], List[str]]:
+    with open(ontology_path) as f:
+        data = json.load(f)
+
+    concepts    = data["concepts"]
+    concept_ids = []
+    labels      = []
+    type_texts  = []
+
+    for uri, info in concepts.items():
+        label       = info.get("label", "")
+        description = info.get("description", "")
+        parents     = info.get("parents", "")
+        if not parents:
+            chain   = info.get("ancestor_chain", [])
+            parents = chain[:max_parents] if chain else []
+
+        concept_ids.append(uri)
+        labels.append(label)
+        type_texts.append(format_type(label, description, parents, max_parents))
+
+    logger.info("Loaded %d DBpedia types", len(concept_ids))
+    return concept_ids, labels, type_texts
+
+
+def load_dataset(data_dir: str) -> List[dict]:
+    records = []
+    for f in sorted(Path(data_dir).glob("*.json")):
+        with open(f) as fp:
+            records.append(json.load(fp))
+    logger.info("Loaded %d T2Dv2 columns", len(records))
+    return records
 
 def run_retrieval(
     model_path: str,

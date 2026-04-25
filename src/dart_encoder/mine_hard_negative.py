@@ -7,16 +7,16 @@ from typing import Dict, List
 
 import torch
 from transformers import AutoTokenizer
-from input_format import format_query, format_type
-from model import BiEncoder
-from data_types import OntologyType
+from .input_format import format_query, format_type
+from .model import BiEncoder
+from .data_types import OntologyType
 
 
 logging.basicConfig(
     format="%(asctime)s | %(levelname)s | %(message)s",
     level=logging.INFO,
 )
-logger = logging.getLogger("hard_neg_mining")
+logger = logging.getLogger(__name__)
 
 
 ## load ontology 

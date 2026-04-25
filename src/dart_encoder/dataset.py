@@ -7,8 +7,9 @@ from pathlib import Path
 import logging
 
 from torch.utils.data import Dataset
-from data_types import OntologyType, TrainSample
-from input_format import format_query, format_type
+
+from .data_types import OntologyType, TrainSample
+from .input_format import format_query, format_type
 
 logger = logging.getLogger(__name__)
 
@@ -51,9 +52,7 @@ class CTADataset(Dataset):
                     qid=d["qid"],
                     label=d.get("label", ""),
                     description=d.get("description", ""),
-                    aliases=d.get("aliases", []),
                     parents=d.get("parents", []),
-                    examples=d.get("examples", []),
                 )
 
         # Load mined hard negatives─
