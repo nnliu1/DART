@@ -141,3 +141,9 @@ logs/
 slurm-*.out
 slurm-*.err
 slurm-*.log
+*.slurm
+
+# experiment
+exp/
+anonymous/
+*.pkl
