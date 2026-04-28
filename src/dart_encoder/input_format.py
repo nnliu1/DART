@@ -12,18 +12,6 @@ def format_query(header: str, cells: List[str], max_cells: int = 10) -> str:
     return f"query: Header: {header} | Cells: {cells_str}"
 
 
-# def format_type(otype: OntologyType, max_parents: int = 3) -> str:
-#     """Format ontology type as e5 passage string."""
-#     text = f"passage: {otype.label}"
-#     if otype.description:
-#         text += f": {otype.description}"
-#     parent_labels = [
-#         p["label"] for p in otype.parents[:max_parents] if p.get("label")
-#     ]
-#     if parent_labels:
-#         text += f". Parent types: {', '.join(parent_labels)}"
-#     return text
-
 def format_type(otype: OntologyType, max_parents: int = 3) -> str:
     """Format ontology type as e5 passage string."""
     text = f"passage: {otype.label}"
