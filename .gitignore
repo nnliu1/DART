@@ -113,11 +113,6 @@ dmypy.json
 
 
 # Data and Model
-data/
-train/
-*.zip
-*.tar.gz
-model/
 *.zip
 *.tar.gz
 

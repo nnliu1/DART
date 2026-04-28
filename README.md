@@ -16,23 +16,13 @@ pip install -r requirements.txt
 
 ## Data and Model
 #### Download the pretrained DART encoder and training dataset
-
-```
-# Model
-wget
-tar
-
-# Data
-wget
-tar
-
-```
-
+see [`DART/data/README.md`](DART/data/README.md)
+and [`DART/model/README.md`](DART/model/README.md)
 ## usage 
 #### 1. set OpenAI API Key
 
 ```
-export OPENAI_API_KEY=""
+export OPENAI_API_KEY="YOUR API KEY"
 ```
 
 #### 2. run the full DART pipeline
