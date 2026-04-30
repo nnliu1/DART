@@ -2,20 +2,12 @@
 # usage: bash dart.sh
 
 #config
-MODEL_URL=""
 MODEL_PATH=""
 ONTOLOGY_PATH="DART/data/ontology/dbo_cache.json"
 DATA_DIR="DART/data/preprocess_table/example_t2dv2"
 PREPROCESSED_DIR="DART/data/preprocess_table/example_t2dv2"
 OUTPUT_DIR="DART/exp/dart_full"
 RETRIEVAL_PKL=""
-
-
-
-## download model 
-wget ${MODEL_URL} -O model.tar.gz
-tar -zvxf model.tar.gz
-rm model.tar.gz
 
 ## retrieve
 mkdir -p ${OUTPUT_DIR}
