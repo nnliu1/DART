@@ -5,10 +5,7 @@ from typing import List, Tuple
 ## query rewriter
 
 def build_rewriter_prompt(column_text: str, guidance_text: str) -> str:
-    """
-    Method 2: Query rewriting prompt.
-    LLM infers the semantic type and rewrites the column description.
-    """
+
     guidance_block = ""
     if guidance_text and "No table context" not in guidance_text:
         guidance_block = f"""
@@ -43,12 +40,7 @@ def build_listwise_prompt(
     top_k_out:     int,
     use_guidance:  bool,
 ) -> str:
-    """
-    Listwise reranking prompt with optional column-level guidance.
 
-    Method 1: guidance_text is placed BEFORE candidates as a single
-    context block, giving LLM table-level understanding before ranking.
-    """
     def anc_str(c: dict) -> str:
         return " → ".join(c["ancestors"]) if c["ancestors"] else "—"
 

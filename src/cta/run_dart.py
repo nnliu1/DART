@@ -73,10 +73,7 @@ def load_pkl(path: str) -> dict:
 
 ## guidance generation
 def step_build_guidance(args, results: List[dict], ontology_raw: dict) -> List[dict]:
-    """
-    Precompute candidate-aware context guidance for all columns.
-    Output: output_dir/retrieval_guided.pkl
-    """
+
     logger.info("=" * 60)
     logger.info("STEP 2: Build Guidance")
     logger.info("=" * 60)
@@ -179,10 +176,7 @@ def step_rewrite(args, results: List[dict], ontology_raw: dict,
 ## Reranking with LLM
 def step_rerank(args, results: List[dict], ontology_raw: dict,
                 client: OpenAI) -> List[dict]:
-    """
-    Listwise LLM reranking for all columns.
-    Output: output_dir/final_results.pkl
-    """
+
     logger.info("=" * 60)
     logger.info("STEP 4: Rerank")
     logger.info("=" * 60)

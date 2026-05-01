@@ -27,12 +27,7 @@ def call_rewriter(
     client:        OpenAI,
     model:         str = "gpt-4o-mini",
 ) -> Optional[Tuple[str, List[str]]]:
-    """
-    Call LLM to rewrite a single column query.
 
-    Returns:
-        (header, cells) if successful, None otherwise.
-    """
     prompt = build_rewriter_prompt(column_text, guidance_text)
     try:
         resp = client.chat.completions.create(

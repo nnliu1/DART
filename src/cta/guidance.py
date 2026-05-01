@@ -81,11 +81,6 @@ def format_type_text(concept: dict) -> str:
 
 
 class ContextGuidance:
-    """
-    Builds column-level context signals by attending over neighbouring
-    columns using a score-weighted average of the top-k candidate type
-    embeddings as the attention query.
-    """
 
     def __init__(
         self,
@@ -117,12 +112,7 @@ class ContextGuidance:
         self,
         candidates: List[dict],
     ) -> Optional[torch.Tensor]:
-        """
-            E_cand = normalize( sum_i w_i * E_{t_i} )
-            w_i    = softmax(s_i / tau)
 
-        Returns None if no valid candidates are provided.
-        """
         if not candidates:
             return None
 
@@ -143,17 +133,7 @@ class ContextGuidance:
         candidates: Optional[List[dict]] = None,
         top_k:      int = 4,
     ) -> ColumnLevelSignal:
-        """
-        Build column-level context guidance using candidate-aware attention.
 
-        Args:
-            record:     Preprocessed column record with neighbour info.
-            candidates: List of {uri, label, score, ...} from bi-encoder.
-            top_k:      Number of context fragments to select.
-
-        Returns:
-            ColumnLevelSignal with ranked fragments and guidance text.
-        """
         fragments = build_context_fragments(record)
 
         if not fragments:
